@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawter MilkSociety Website | CodingNepal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main2.css') }}">
+    <!-- Fontawesome Link for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h2 class="logo"><a href="#">LawterMilkSociety</a></h2>
+        <input type="checkbox" id="menu-toggler">
+        <label for="menu-toggler" id="hamburger-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </label>
+        <ul class="all-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#home" id="form-open">Sign In</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="home">
+        <div class="form_container">
+          <i class="uil uil-times form_close"></i>
+          <!-- Login From -->
+          <div class="form login_form">
+            <form action="/login" method="post">
+              <h2>Login</h2>    
+              <div class="input_box">
+                <input type="email" placeholder="Enter your email" name="email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Enter your password" name="password" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+    
+              <div class="option_field">
+                <span class="checkbox">
+                  <input type="checkbox" id="check" />
+                  <label for="check">Remember me</label>
+                </span>
+                <a href="#" class="forgot_pw">Forgot password?</a>
+              </div>
+    
+              <button class="button">Login Now</button>
+    
+              <div class="login_signup">Don't have an account? <a href="/register" id="signup">Signup</a></div>
+            </form>
+          </div>
+    
+          <!-- Signup From -->
+          <div class="form signup_form">
+            <form action="/register" method="post" autocomplete="off">
+              <h2>Signup</h2>
+              <div class="input_box">
+                <input type="username" placeholder="username" name="username"required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="email" placeholder="Enter your email" name="email" required />
+                <i class="uil uil-envelope-alt email"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Create password" name="password" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+              <div class="input_box">
+                <input type="password" placeholder="Confirm password" name="confirm_password" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash pw_hide"></i>
+              </div>
+    
+              <button class="button">Signup Now</button>
+    
+              <div class="login_signup">Already have an account? <a href="/login" id="login">Login</a></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    <section class="homepage" id="home">
+      <div class="content">
+        <div class="text">
+          <h1>Lawter MilkSociety</h1>
+          <p>
+            Where Milk, Cows, and Community Come Together in a Symphony of Moo-sic! </p>
+            <p>
+                Find the Perfect  Gear for Your Next Outdoor Adventure With Us Today By Joining our Innovative MilkSociety.
+            </p>
+        </div>
+        <a href="#"id="signup">Join us</a>
+      </div>
+    </section>
+    <!---
+    <section class="section about" id="about">
+        <div class="about-content container">
+                <div class="about-imageContent">
+                        <img src="{{ url_for('static', filename='img/about.jpg') }}" alt="" class="about-img">
+
+                        <div class="aboutImg-textBox">
+                                <i class='bx bx-heart heart-icon flex'></i>
+                                <p class="content-description">I really love the Cappucino. The coffee war very smooth.</p>
+                        </div>
+                </div>
+
+                <div class="about-details">
+                        <div class="about-text">
+                                <h4 class="content-subtitle"><i>Our coffee Shop</i></h4>
+                                <h2 class="content-title">We Combine Classics <br> and Modernity</h2>
+                                <p class="content-description">We appreciate your trust greatly. 
+                                        Our clients choose us and our products because theyknow we are the best.</p>
+
+                                <ul class="about-lists flex">
+                                        <li class="about-list">Cappucino</li>
+                                        <li class="about-list dot">.</li>
+                                        <li class="about-list">Late</li>
+                                        <li class="about-list dot">.</li>
+                                        <li class="about-list">Arabica</li>
+                                </ul>
+                        </div>
+
+                        <div class="about-buttons flex">
+                                <button class="button">About Us</button>
+                                <a href="#" class="about-link flex">
+                                        <span class="link-text">see more</span>
+                                        <i class='bx bx-right-arrow-alt about-arrowIcon'></i>
+                                </a>
+                        </div>
+                </div>
+
+        </div>
+</section>-->
+
+    <section class="services" id="services">
+      <h2>Our Services</h2>
+      <p>Explore our wide range of camping gear services.</p>
+      <ul class="cards">
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/milkcollection2.jpg') }}" alt="img">
+          <h3>Milk Collection</h3>
+          <p>We collect milk from our farmers on a daily basis to ensure the freshest and highest quality products.</p>
+          <p>We Collect three time a day mornig ,Afternoon and Evening.</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/mastatis.jpg') }}" alt="img">
+          <h3>cow treatments</h3>
+          <p>We provide a range of cow treatments including insemination, health monitoring,
+             and nutrition management to ensure the well-being of our Farmers cows and the quality of the  milk they supply to us .</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/quality1.jpg') }}" alt="img">
+          <h3>milk quality</h3>
+          <p>We ensure milk quality through rigorous testing, strict hygiene standards, 
+            and a commitment to excellence at every step of the process.</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/farmer2.jpg') }}" alt="img">
+          <h3>farmer support</h3>
+          <p>we provide comprehensive support to our farmers, including training, resources, and assistance to help them thrive in the dairy industry.</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/insuarance3.jpg') }}" alt="img">
+          <h3>Insuarance</h3>
+          <p>We provide a comprehensive insuranace to our farmers on the matter of their cows in terms of Risk 
+            Against death and the full compesation with another cow after a cow attains six calves .</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/loans.jpg') }}" alt="img">
+          <h3>Financial Support</h3>
+          <p>We do provide loans or credit facilities to help farmers invest in their businesses or cope with financial challenges.</p>
+        </li>
+      </ul>
+    </section>
+    <!--
+    <section class="portfolio" id="portfolio">
+      <h2>Our Portfolio</h2>
+      <p>Take a look to some of our proficient managers</p>
+      <ul class="cards">
+        <li class="card">
+            <img src="{{ url_for('static', filename='img/ceo.jpg') }}" alt="img">
+            <h3>Socities C.E.O</h3>
+              </p>
+          </li>
+        <li class="card">
+          <img class="img2" src="{{ url_for('static', filename='img/ceo.jpg') }}" alt="img">
+          <h3>Mountain Hiking</h3>
+          <p>Embark on an exhilarating hiking adventure in the breathtaking mountain ranges.</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/Nellie.jpg') }}" alt="img">
+          <h3>Lakeside Camping</h3>
+          <p>Enjoy a tranquil camping experience by the serene shores of picturesque lakes.</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/farmer2.jpg') }}" alt="img">
+          <h3>Beach Camping</h3>
+          <p>Escape to sandy beaches and camp under the starry sky by the crashing waves.</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/secretary.jpg') }}" alt="img">
+          <h3>Forest Exploration</h3>
+          <p>Discover the wonders of lush forests and immerse yourself in nature's beauty.</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/veterinary.jpg') }}" alt="img">
+          <h3>RV Camping</h3>
+          <p>Experience the freedom of road trips and camping adventures with our RV rentals.</p>
+        </li>
+        <li class="card">
+          <img src="{{ url_for('static', filename='img/farmer2.jpg') }}" alt="img">
+          <h3>Desert Camping</h3>
+          <p>Embark on a unique desert camping experience and witness stunning landscapes.</p>
+        </li>
+      </ul>
+    </section>
+  -->
+
+    <section class="about" id="about">
+      <h2>About Us</h2>
+      <p>Discover our story in Milk services.</p>
+      <div class="row company-info">
+        <h3>Our Story</h3>
+        <p>At LawterMilkSociety, we're more than just a milk collection service.
+           We're a community of cow enthusiasts dedicated to providing top-notch cow 
+           treatment services and ensuring the well-being of our beloved bovines.</p>
+        <p>In addition to collecting milk from farmers,
+            we offer comprehensive insurance for cows, as well as expert
+            assistance and consultations on cow management. Our mission is to create 
+            a utopia for cows and the people who love them!</p>
+        <p>Join our udderly amazing community today and be a part of something truly extraordinary.</p>
+      </div>
+      <div class="row mission-vision">
+        <h3>Our Mission</h3>
+        <p>At LawterMilkSociety, we're on a mission to revolutionize the dairy industry. We collect milk from farmers on a daily basis, providing top-notch cow treatment, insemination, and healthy monitoring for our dedicated farmers.</p>
+        <h3>Our Vision</h3>
+        <p>At LawterMilk Society, our vision is to pioneer a paradigm shift in the dairy industry, setting new standards of excellence in ethical and sustainable milk production.</p>
+      </div>
+      <!--
+      <div class="row team">
+        <h3>Our Team</h3>
+        <ul>
+          <li>John Doe - Founder and CEO</li>
+          <li>Jane Smith - Gear Specialist</li>
+          <li>Mark Johnson - Customer Representative</li>
+          <li>Sarah Brown - Operations Manager</li>
+        </ul>
+      </div>
+      -->
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <p>Reach out to us for any inquiries or feedback.</p>
+      <div class="row">
+        <div class="col information">
+          <div class="contact-details">
+            <p><i class="fas fa-map-marker-alt"></i> Tom Mboya Street, Meru, CA 2</p>
+            <p><i class="fas fa-envelope"></i> mugendiwalter37@gmail.com</p>
+            <p><i class="fas fa-phone"></i> (254) 706-143167</p>
+            <p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 5:00 PM</p>
+            <p><i class="fas fa-clock"></i> Saturday: 10:00 AM - 2:00 PM</p>
+            <p><i class="fas fa-clock"></i> Sunday: Closed</p>
+<!--<p><i class="fas fa-globe"></i> </p>-->
+          </div>          
+        </div>
+        <div class="col form">
+          <form>
+            <input type="text" placeholder="Name*" required>
+            <input type="email" placeholder="Email*" required>
+            <textarea placeholder="Message*" required></textarea>
+            <button id="submit" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <span>Copyright © 2024 All Rights Reserved</span>
+        <span class="link">
+            <a href="#">Home</a>
+            <a href="#contact">Contact</a>
+        </span>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block content %}
+
+    <div class="content">
+        <div class="card">
+    <h1>Registered Cows</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Litres of Water</th>
+                <th>Number of Calves</th>
+                <th>Yearly Yield</th>
+                <th>Cow Breed</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cow in cows %}
+            <tr>
+                <td>{{ cow[0] }}</td>
+                <td>{{ cow[1] }}</td>
+                <td>{{ cow[2] }}</td>
+                <td>{{ cow[3] }}</td>
+                <td>{{ cow[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+
+{% endblock content %}

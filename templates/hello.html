@@ -1,0 +1,72 @@
+   {% extends "index.html" %}
+   {% block title %}
+    Prediction Page
+    {% endblock %}
+    {% block content %}
+    
+        <div class="content">
+        <div class="card">
+                <h1 class="text-center text-success">Milk Yield Prediction In Homabay County</h1>
+    <div class="container my-4 mt-4" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 20px; color:white">
+       
+        <form action="/predict" method="POST">
+        <div class="form-group">
+                <label for="Average Temperature of the Area	">Average Temperature of the Area	</label>
+                <input type="Temperature" class="form-control" name="Average_Temperature_of_the_Area"  required>
+            </div>
+            <div class="form-group">
+                <label for="Litres of water Taken by the cow in a day">Litres of water Taken by the cow in a day</label>
+                <input type="number" class="form-control" name="Litres_of_water_Taken_by_the_cow_in_a_day" min="20" max="130" step="0" value="0"  required>
+            </div>
+            <div class="form-group">
+            <label for="No_of_Calves">Number of Calves</label>
+            <input type="number" class="form-control" name="No_of_Calves" min="1" max="7" step="1" value="1" required >
+        </div>
+        
+        <div class="form-group">
+            <label for="Cow Breed">Cow Breed</label>
+            <select class="form-control" name="Cow_Breed" id="Cow_Breed">
+                <option value="Guernsey">Guernsey</option>
+                <option value="Jersey">Jersey</option>
+                <option value="Ayrshire">Ayrshire</option>
+                <option value="Brown Swiss">Brown Swiss</option>
+                <option value="Holstein-Friesian">Holstein-Friesian</option>
+              </select>
+        </div>
+        <div class="form-group">
+            <label for="Feeding Practices">Feeding Practices</label>
+            <select class="form-control" name="Feeding_Practices" id="Feeding_Practices">
+                <option value="Grazing">Grazing</option>
+                <option value="Mixed">Mixed</option>
+                <option value="Zero-grazing">Zero-grazing</option>
+              </select>
+        </div>        
+        <div class="form-group">
+            <label for="Area">Area</label>
+            <select class="form-control" name="Area" id="Area">
+                <option value="Homa Bay Town">Homa Bay Town</option>
+                <option value="Suba North">Suba North</option>
+                <option value="Suba South">Suba South</option>
+                <option value="Rachuonyo East">Rachuonyo East</option>
+                <option value="Rachuonyo South">Rachuonyo South</option>
+                <option value="Rachuonyo North">Rachuonyo North</option>
+                <option value="Ndhiwa">Ndhiwa</option>
+              </select>
+        </div>
+        
+        <!---
+        <div class="form-group">
+            <label for="Item">Item</label>
+            <input type="text" class="form-control" name="Item" >
+        </div>-->
+        <button type="submit" class="btn btn-danger btn-lg mt-2 btn-block">Predict</button>
+        </form>
+               {% if prediction %}
+               <h1 class="text-center"> Predicted Yield: <br>{{prediction}}</h1>
+               {% endif %}      
+    </div>
+        </div>
+        </div>
+
+    {% endblock %}
+  

@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="content">
+  <div class="card">
+
+<h1>Register Your Cow</h1>
+  <!--<div class="icon">
+    <img src="{{ url_for('static', filename='img/cow.png') }}" alt="static/img">
+  </div>-->
+  <form action="/cow" method="POST">
+  <div class="formcontainer">
+  <div class="container">
+    <label for="Litres_of_water_Taken_by_the_cow_in_a_day">Litres of water Taken by the cow in a day</label><br>
+    <input type="number" class="form-control big-box" name="Litres_of_water_Taken_by_the_cow_in_a_day" min="20" max="130" step="0" value="0" required ><br>
+    <label for="No_of_Calves">Number of Calves</label><br>
+    <input type="number" class="form-control big-box" name="No_of_Calves" min="1" max="7" step="1" value="1" required><br>
+    <label for="Yearly_yield">Yearly Milk Production</label><br>
+    <input type="number" class="form-control big-box" name="Yearly_yield" min="500" max="1000000" step="" value="" required><br>
+    <label for="Cow_Breed">Cow Breed</label><br>
+    <select class="form-control big-box" name="Cow_Breed" id="Cow_Breed">
+        <option value="Guernsey">Guernsey</option>
+        <option value="Jersey">Jersey</option>
+        <option value="Ayrshire">Ayrshire</option>
+        <option value="Brown Swiss">Brown Swiss</option>
+        <option value="Holstein-Friesian">Holstein-Friesian</option>
+      </select>
+  </div>
+  <button type="submit"><strong>submit</strong></button>
+  <!--<div class="container" style="background-color: #eee">
+    <label style="padding-left: 15px">
+    <input type="checkbox"  checked="checked" name="remember"> Remember me
+    </label>
+    <span class="psw"><a href="#">Forgot password?</a></span>
+  </div>-->
+</form>
+</div>
+</div>
+{% endblock content %}

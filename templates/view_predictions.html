@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block content %}
+
+    <div class="content">
+        <div class="card">
+    <h1>Predictions</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Average Temperature of the area</th>
+                <th>Litres of Water taken by the cow in a day</th>
+                <th>Nuber of Calves</th>
+                <th>Cow Breed</th>
+                <th>Feeding Practices</th>
+                <th>Area</th>
+                <th>Prediction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prediction in predictions %}
+            <tr>
+                <td>{{ prediction[0] }}</td>
+                <td>{{ prediction[1] }}</td>
+                <td>{{ prediction[2] }}</td>
+                <td>{{ prediction[3] }}</td>
+                <td>{{ prediction[4] }}</td>
+                <td>{{ prediction[5] }}</td>
+                <td>{{ prediction[6] }}</td>
+                <td>{{ prediction[7] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        </div>
+    </div>
+
+{% endblock content %}

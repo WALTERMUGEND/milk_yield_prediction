@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="content">
+    <div class="card">
+    <h1>Logout</h1>
+    <p>Are you sure you want to log out?</p>
+    <form action="{{ url_for('logout') }}" method="POST">
+        <button type="submit">Yes</button>
+    </form>
+    <a href="{{ url_for('home') }}">No, go back</a>
+    </div>
+</div>
+{% endblock content %}
+
