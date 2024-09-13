@@ -1,0 +1,1 @@
+The Milk Yield Prediction System uses machine learning to forecast milk yields and provides essential cow information. Integrating Average_Temperature_of_the_Area, Litres_of_water_Taken_by_the_cow_in_a_day,No_of_Calves, Cow_Breed, Feeding_Practices,Area it offers accurate predictions and supports models like Linear Regression, Lasso, Ridge and DecisionTreeRegressor
